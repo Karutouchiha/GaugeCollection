@@ -19,20 +19,20 @@ public class Main extends Application
 
         @Override public void start(Stage stage) {
 
-            EventHandler<MouseEvent> btn_handler = new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent e) {
+        EventHandler<MouseEvent> btn_handler = new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent e) {
 
-                    try {
-                        int v = Integer.parseInt(txtValue.getText());
-                        gb.setValue(v);
-                    }
-                    catch(Exception ex) {
-                        System.out.println("Input Exception!");
-                    }
+                try {
+                    int v = Integer.parseInt(txtValue.getText());
+                    gb.setValue(v);
+                }
+                catch(Exception ex) {
+                    System.out.println("Input Exception!");
+                }
 
                 }
-            };
+        };
 
             gb.init(500, 500);
             gb.setValue(45);

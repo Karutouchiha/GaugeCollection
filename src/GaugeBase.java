@@ -18,16 +18,21 @@ public class GaugeBase extends Group {
 
     public void redraw()
     {
-        Rectangle border = new Rectangle();
-        border.setX(0);
-        border.setY(0);
-        border.setWidth(width);
-        border.setHeight(height);
-        border.setArcWidth(20);
-        border.setArcHeight(20);
-        border.setStrokeWidth(10);
-        border.setStroke(Color.RED);
-        border.setFill(Color.GRAY);
+        Rectangle battery = new Rectangle();
+        battery.setX(0);
+        battery.setY(0);
+        battery.setWidth(220);
+        battery.setHeight(60);
+        battery.setFill(Color.GRAY);
+
+        Rectangle bar_1 = new Rectangle();
+        bar_1.setFill(Color.RED);
+        bar_1.setX(0);
+        bar_1.setY(0);
+        bar_1.setWidth(20);
+        bar_1.setHeight(60);
+        bar_1.setArcWidth(20);
+        bar_1.setArcHeight(20);
 
         Text t = new Text();
         t.setText(String.valueOf(this.value));
@@ -39,10 +44,10 @@ public class GaugeBase extends Group {
         double h = t.getLayoutBounds().getHeight();
 
         //calculate center
-        t.setX(this.width / 2.0 - w / 2.0);
-        t.setY(this.height / 2 - h / 2.0);
+        //t.setX(this.width / 2.0 - w / 2.0);
+        //t.setY(this.height / 2 - h / 2.0);
 
-        this.getChildren().addAll(border, t);
+        this.getChildren().addAll(battery,bar_1,t);
     }
 
     public void init(int width, int height)
